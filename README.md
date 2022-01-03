@@ -1,3 +1,12 @@
+- [Заметки о работе с Vault](#заметки-о-работе-с-vault)
+  - [Концепции Vault](#концепции-vault)
+    - [Sealing (Запечатывание)/Unsealing (Распечатывание) Vault](#sealing-запечатываниеunsealing-распечатывание-vault)
+    - [Root токен](#root-токен)
+    - [Первоначальная инициализация хранилища](#первоначальная-инициализация-хранилища)
+    - [Policies (Политики)](#policies-политики)
+    - [CLI команды](#cli-команды)
+      - [То же самое, но curl'ом](#то-же-самое-но-curlом)
+
 # Заметки о работе с Vault
 ![scheme](images/Secrets+management+-+Vault.jpg)
 
@@ -89,7 +98,7 @@ vault login
 Политики в Vault работают как chown/users в Unix — у вас есть пользователь root с доступом ко всему и отдельные пользователи с доступом только к определённому пути.
 
 ```
-# djangoapp.hcl
+djangoapp.hcl
 path "secret/djangoapp/*" {
   policy = "read"
 }
